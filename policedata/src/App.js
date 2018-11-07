@@ -24,12 +24,13 @@ class App extends Component {
 		);
 	}
 	componentDidMount = () => {
-		api.fetchSearches().then((data) => {
+		api.fetchSearches('greater-manchester').then((data) => {
 			this.setState({
 				searches: data
 			});
 		});
 	};
+
 	setForce = (force) => {
 		api.fetchSearches(force).then((data) => {
 			this.setState({
