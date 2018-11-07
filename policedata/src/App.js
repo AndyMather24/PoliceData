@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from './api';
 import './App.css';
 import MapExample from './components/MapExample';
+import Selectarea from './components/Selectarea';
 class App extends Component {
 	state = {
 		searches: []
@@ -13,17 +14,24 @@ class App extends Component {
 					{' '}
 					<h2>Stop & Search</h2>
 				</header>
-				<div className="drop-down-box"> drop down box here</div>
-				<section className="map-section">
+				<div className="drop-down-box">
 					{' '}
-					<MapExample />{' '}
-				</section>
-				<section className="info-section"> Search info goes here </section>
+					<Selectarea setForce={this.setForce} />
+				</div>
+				<section className="info-section"> </section>
+				<MapExample searchData={this.state.searches} />{' '}
 			</div>
 		);
 	}
 	componentDidMount = () => {
 		api.fetchSearches().then((data) => {
+			this.setState({
+				searches: data
+			});
+		});
+	};
+	setForce = (force) => {
+		api.fetchSearches(force).then((data) => {
 			this.setState({
 				searches: data
 			});

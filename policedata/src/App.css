@@ -3,7 +3,7 @@
 	display: grid;
 	grid-template-columns: 2fr 6fr 2fr;
 	grid-template-rows: 3fr 1fr 10fr 5fr;
-	grid-template-areas: '. header .' '. drop-down-box .' '. map-section .' '. info-section .';
+	grid-template-areas: '. header .' '. drop-down-box .' '. mapid .' '. info-section .';
 }
 header {
 	grid-area: header;
@@ -13,10 +13,11 @@ header {
 	grid-area: drop-down-box;
 }
 
-.map-section {
-	grid-area: map-section;
-}
-
 .info-section {
 	grid-area: info-section;
+}
+
+.mapid {
+	grid-area: mapid;
+	height: 300px;
 }
