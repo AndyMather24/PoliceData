@@ -15,8 +15,10 @@ const MapExample = (props) => {
 						<Marker position={position}>
 							<Popup>
 								<ul>
-									<li>age:{search.age_range}</li>
-									<li>Gender:{search.gender}</li>
+									<li> Ethnicity: {search.legislation} </li>
+									<li> Ethnicity: {search.self_defined_ethnicity} </li>
+									<li>age: {search.age_range}</li>
+									<li>Gender: {search.gender}</li>
 									<li>Reason: {search.object_of_search}</li>
 									<li>outcome: {search.outcome}</li>
 								</ul>
